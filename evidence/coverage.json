@@ -1,0 +1,862 @@
+{
+  "schema_version": 1,
+  "audit_date_myt": "2026-10-06",
+  "timezone": "Asia/Kuala_Lumpur (UTC+08:00)",
+  "selection": "Ten most recently active logical user-facing chats per project by inventory updated_at, including archived chats; internal subagents excluded from selection.",
+  "source_method": "Read-only inspection of private local retained conversation logs and SQLite projections. Public records use aliases and an explicit field whitelist; no raw histories or private identifiers are exported.",
+  "count_method": {
+    "indexed_turns": "Read-only indexed projection, crosschecked against audit totals.",
+    "distinct_raw_task_starts": "Distinct start identities across all retained rollover files for each logical chat; summed once per chat.",
+    "compactions": "Recorded compaction events across all retained rollover files.",
+    "explicit_failed_turns": "Indexed turns with explicit failure records; this is not a count of model-workflow failures.",
+    "historical_model_effort_pairs": "Actual retained turn_context records, grouped by model and effort in first-observed order; context-record counts are not distinct completed turns or failure rates."
+  },
+  "limits": [
+    "This is a purposive, unequal-exposure sample; related chats are not independent failure observations and no model ranking is supported.",
+    "Indexed projections and raw starts differ because rollover, continuation and rewritten histories preserve different material.",
+    "Compaction counts and temporal proximity do not establish that compaction caused an incident or erased instructions.",
+    "Turn completion does not certify task completion; stale in-progress rows do not prove endless loops.",
+    "Historical models identify observed agent turns, not necessarily originating authors of inherited code; trained/evaluated models and explicitly selected helpers are separate.",
+    "A zero value for C09 indexed turns describes unavailable indexed history, not proof that no earlier work occurred."
+  ],
+  "totals": {
+    "selected_chats": 30,
+    "indexed_turns": 1784,
+    "distinct_raw_task_starts": 1853,
+    "compactions": 569,
+    "explicit_failed_turns": 26,
+    "retained_rollover_files": 34
+  },
+  "tasks": [
+    {
+      "alias": "I01",
+      "project": "ibkr_tws_workflow",
+      "rank": 1,
+      "title": "Trader 120B Trainer",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T23:04:17+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 152
+        },
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 7
+        }
+      ],
+      "indexed_turns": 104,
+      "distinct_raw_task_starts": 104,
+      "compactions": 55,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "confirmed_model_workflow_failure_active_task",
+      "case_ids": [
+        "IBKR-01",
+        "IBKR-02"
+      ],
+      "outcome": "Economic capability was displaced by policy imitation and technical milestones. Later human steering completed previously unfinished local start/close paths; V9 work remained active.",
+      "limits": "IBKR-01 and IBKR-02. Legitimate uncertain-operation stops remain valid. Active work at cutoff is not autonomous abandonment."
+    },
+    {
+      "alias": "I02",
+      "project": "ibkr_tws_workflow",
+      "rank": 2,
+      "title": "Trader 120B Eval",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T15:13:52+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 74
+        }
+      ],
+      "indexed_turns": 37,
+      "distinct_raw_task_starts": 37,
+      "compactions": 37,
+      "explicit_failed_turns": 4,
+      "retained_rollover_files": 1,
+      "classification": "confirmed_model_workflow_failure_and_external_errors",
+      "case_ids": [
+        "IBKR-03",
+        "IBKR-04",
+        "IBKR-05"
+      ],
+      "outcome": "Narrow V5 evaluation was called complete and rejected responses were discarded. V8 repair and validation stalled at 65, then 72 of 250 sessions; user ultimately stopped it.",
+      "limits": "IBKR-03 through IBKR-05. The first result disclosed a price-only caveat. Real provider failures and the explicit final stop are separated from avoidable repair stagnation."
+    },
+    {
+      "alias": "I03",
+      "project": "ibkr_tws_workflow",
+      "rank": 3,
+      "title": "IBKR TWS Owner pa_tws",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T15:06:45+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-reserve",
+          "effort": "max",
+          "retained_context_records": 102
+        },
+        {
+          "model": "gpt-6-astra",
+          "effort": "max",
+          "retained_context_records": 1
+        },
+        {
+          "model": "gpt-6-sol",
+          "effort": "ultra",
+          "retained_context_records": 1
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 108
+        }
+      ],
+      "indexed_turns": 181,
+      "distinct_raw_task_starts": 181,
+      "compactions": 31,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "external_quota_and_active_implementation",
+      "case_ids": [],
+      "outcome": "Many broker instruction, API-extension and implementation turns completed. One usage-limit failure occurred; further implementation remained active.",
+      "limits": "No separately proven context-loss or abandonment incident. The title and current selector do not establish historical models; gpt-reserve has an unverified public family."
+    },
+    {
+      "alias": "I04",
+      "project": "ibkr_tws_workflow",
+      "rank": 4,
+      "title": "IBKR Market-Hours Instruction Executor",
+      "archived": true,
+      "inventory_updated_myt": "2026-09-17T00:30:24+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.6-terra",
+          "effort": "medium",
+          "retained_context_records": 1
+        }
+      ],
+      "indexed_turns": 1,
+      "distinct_raw_task_starts": 1,
+      "compactions": 0,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "external_quota_before_cognition",
+      "case_ids": [],
+      "outcome": "The sole scheduled invocation failed on a usage limit before any assistant answer.",
+      "limits": "No model behavior can be assessed from this failed invocation. Recorded turn effort was medium, despite a different current task setting."
+    },
+    {
+      "alias": "I05",
+      "project": "ibkr_tws_workflow",
+      "rank": 5,
+      "title": "can you test if you can spawn subagents.",
+      "archived": true,
+      "inventory_updated_myt": "2026-09-16T23:47:34+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-reserve",
+          "effort": "max",
+          "retained_context_records": 1
+        }
+      ],
+      "indexed_turns": 1,
+      "distinct_raw_task_starts": 1,
+      "compactions": 0,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "completed_simple_control",
+      "case_ids": [],
+      "outcome": "The subagent-spawn test returned success.",
+      "limits": "A successful one-turn control, not a complex autonomous assignment. The underlying public family of gpt-reserve is unverified."
+    },
+    {
+      "alias": "I06",
+      "project": "ibkr_tws_workflow",
+      "rank": 6,
+      "title": "Luna IBKR Personal Assistant.",
+      "archived": true,
+      "inventory_updated_myt": "2026-09-16T22:50:52+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-reserve",
+          "effort": "max",
+          "retained_context_records": 12
+        }
+      ],
+      "indexed_turns": 12,
+      "distinct_raw_task_starts": 12,
+      "compactions": 0,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "confirmed_authority_loop",
+      "case_ids": [
+        "IBKR-06"
+      ],
+      "outcome": "Repeated commissioning refusals left the requested order objective unmet after explicit authorization.",
+      "limits": "IBKR-06. Initial caution and remaining operational configuration were legitimate; the gap was failure to turn prerequisites into a concrete completion route."
+    },
+    {
+      "alias": "I07",
+      "project": "ibkr_tws_workflow",
+      "rank": 7,
+      "title": "IBKR PA GPT-6 Astra",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-14T15:28:52+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 28
+        }
+      ],
+      "indexed_turns": 3,
+      "distinct_raw_task_starts": 24,
+      "compactions": 4,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 3,
+      "classification": "completed_audit_and_handoff_with_corrected_recommendation",
+      "case_ids": [],
+      "outcome": "Interface experiments, migrations, audits and baseline handoff completed across three rollover files. An overstated MCP recommendation and an omitted refusal receipt were corrected.",
+      "limits": "No ongoing loop or autonomous abandonment established. The indexed projection covers less than the full retained history."
+    },
+    {
+      "alias": "I08",
+      "project": "ibkr_tws_workflow",
+      "rank": 8,
+      "title": "IBKR PA GPT-5.6 Sol",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-07T23:31:38+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "ultra",
+          "retained_context_records": 314
+        }
+      ],
+      "indexed_turns": 271,
+      "distinct_raw_task_starts": 271,
+      "compactions": 75,
+      "explicit_failed_turns": 3,
+      "retained_rollover_files": 1,
+      "classification": "external_tool_and_platform_failure_secondary_evidence",
+      "case_ids": [],
+      "outcome": "The long PA history contains many completed actions and secondary diagnoses of other managers. Three turns failed: two disconnected streams and one capacity error.",
+      "limits": "Secondary reports are not independent proof of this PA losing context. Stale in-progress rows do not prove autonomous loops."
+    },
+    {
+      "alias": "I09",
+      "project": "ibkr_tws_workflow",
+      "rank": 9,
+      "title": "Trading Stack",
+      "archived": false,
+      "inventory_updated_myt": "2026-07-27T16:08:50+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "ultra",
+          "retained_context_records": 34
+        }
+      ],
+      "indexed_turns": 13,
+      "distinct_raw_task_starts": 13,
+      "compactions": 21,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "confirmed_post_compaction_task_drop",
+      "case_ids": [
+        "IBKR-07"
+      ],
+      "outcome": "The initial rebuild completed. A later repair turn ended on a status answer about 17 seconds after compaction, leaving deployment and commissioning to another Owner.",
+      "limits": "IBKR-07. Original objectives remained in retained context; compaction erasure is unproven. The rebuild prohibited broker mutations and test orders."
+    },
+    {
+      "alias": "I10",
+      "project": "ibkr_tws_workflow",
+      "rank": 10,
+      "title": "Test inter-thread messaging",
+      "archived": false,
+      "inventory_updated_myt": "2026-07-27T16:05:35+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "ultra",
+          "retained_context_records": 1
+        }
+      ],
+      "indexed_turns": 1,
+      "distinct_raw_task_starts": 1,
+      "compactions": 0,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "completed_simple_control",
+      "case_ids": [],
+      "outcome": "Two-way inter-chat messaging was verified.",
+      "limits": "A successful one-turn control, not evidence about complex task reliability."
+    },
+    {
+      "alias": "C01",
+      "project": "Christomorphic-Tinker",
+      "rank": 1,
+      "title": "Complete Google Cloud evaluation",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T19:31:06+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 5
+        }
+      ],
+      "indexed_turns": 4,
+      "distinct_raw_task_starts": 4,
+      "compactions": 1,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "task_superseded_and_successful_followup",
+      "case_ids": [],
+      "outcome": "Evaluation takeover was explicitly superseded. Requested adapter/checkpoint backup was downloaded and hash-verified; resource and billing closure completed.",
+      "limits": "The final stop was authorized cancellation/resource closure. No evaluation completion was claimed."
+    },
+    {
+      "alias": "C02",
+      "project": "Christomorphic-Tinker",
+      "rank": 2,
+      "title": "Google Cloud Eval",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T19:24:18+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 41
+        }
+      ],
+      "indexed_turns": 11,
+      "distinct_raw_task_starts": 11,
+      "compactions": 30,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "confirmed_execution_failure",
+      "case_ids": [
+        "CT-01",
+        "CT-03",
+        "CT-05"
+      ],
+      "outcome": "Setup, renewal, integration repair and a missed heartbeat left evaluation at zero of 648 replies.",
+      "limits": "CT-01, CT-03 and CT-05. Parent metadata records Sol6.1 Ultra; explicit Astra helpers are separate. Genuine infrastructure failures coexist with local execution defects."
+    },
+    {
+      "alias": "C03",
+      "project": "Christomorphic-Tinker",
+      "rank": 3,
+      "title": "Update tinker and cookbook",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T18:25:33+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.3-codex-spark",
+          "effort": "xhigh",
+          "retained_context_records": 11
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "effort": "xhigh",
+          "retained_context_records": 10
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "xhigh",
+          "retained_context_records": 52
+        },
+        {
+          "model": "gpt-6-sol",
+          "effort": "xhigh",
+          "retained_context_records": 43
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 105
+        }
+      ],
+      "indexed_turns": 206,
+      "distinct_raw_task_starts": 206,
+      "compactions": 19,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "mostly_completed_support_with_scope_intervention",
+      "case_ids": [],
+      "outcome": "SDK/runtime updates, compatibility reports and storage housekeeping largely completed. The user narrowed the support role and the assistant acknowledged it.",
+      "limits": "No strong loop or abandonment established. Later delegated trading support is not by itself scope creep. Models changed across the retained history."
+    },
+    {
+      "alias": "C04",
+      "project": "Christomorphic-Tinker",
+      "rank": 4,
+      "title": "Christomorphic Researcher",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T16:48:11+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-sol",
+          "effort": "ultra",
+          "retained_context_records": 122
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 175
+        },
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 1
+        }
+      ],
+      "indexed_turns": 255,
+      "distinct_raw_task_starts": 255,
+      "compactions": 44,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "monitoring_and_training_success_under_hold",
+      "case_ids": [],
+      "outcome": "Initial training/testing closure and later read-only monitoring completed under an external HOLD. It reported a final authentication-variable failure.",
+      "limits": "Monitoring and periodic checkpoints were authorized. No demonstrated forgetting; it did not own the final execution path."
+    },
+    {
+      "alias": "C05",
+      "project": "Christomorphic-Tinker",
+      "rank": 5,
+      "title": "Christomorphic Google Cloud review",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T16:46:41+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 11
+        }
+      ],
+      "indexed_turns": 9,
+      "distinct_raw_task_starts": 9,
+      "compactions": 2,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "completed_review_then_explicit_handoff",
+      "case_ids": [],
+      "outcome": "Independent critical reviews and technical assistance were delivered. Temporary execution control transferred on a newer explicit user takeover; zero replies were disclosed.",
+      "limits": "The requested original deliverable was review. Handoff was authorized, not spontaneous abandonment."
+    },
+    {
+      "alias": "C06",
+      "project": "Christomorphic-Tinker",
+      "rank": 6,
+      "title": "Christomorphic Professor",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-05T10:49:06+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 13
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 126
+        }
+      ],
+      "indexed_turns": 67,
+      "distinct_raw_task_starts": 67,
+      "compactions": 72,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "confirmed_integration_failure_with_training_success",
+      "case_ids": [
+        "CT-02"
+      ],
+      "outcome": "Four 192-step training arms completed with 768 accepted updates. Subsequent evaluation integration failed and produced no behavioral evaluation.",
+      "limits": "CT-02. Early Astra preparation and later Sol6.1 repairs are distinct. Capacity, cloud and package obstacles are not all agent decisions."
+    },
+    {
+      "alias": "C07",
+      "project": "Christomorphic-Tinker",
+      "rank": 7,
+      "title": "Christomorphic Research Oversight",
+      "archived": true,
+      "inventory_updated_myt": "2026-09-30T01:22:17+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 121
+        }
+      ],
+      "indexed_turns": 26,
+      "distinct_raw_task_starts": 69,
+      "compactions": 52,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 3,
+      "classification": "completed_multiple_experiments_with_partial_followup_and_human_intervention",
+      "case_ids": [
+        "CT-07"
+      ],
+      "outcome": "Multiple training/evaluation experiments completed, including a 768-reply cloud causal adapter test. A later broader formation investigation remained unperformed; explicit clean-context handoff followed.",
+      "limits": "CT-07. All three retained segments were inspected. Scientific negative results, capacity errors and explicit handoffs are separated from task-execution failures; the indexed projection covers an older segment."
+    },
+    {
+      "alias": "C08",
+      "project": "Christomorphic-Tinker",
+      "rank": 8,
+      "title": "V18 Oversight",
+      "archived": false,
+      "inventory_updated_myt": "2026-08-25T11:17:54+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "ultra",
+          "retained_context_records": 70
+        }
+      ],
+      "indexed_turns": 60,
+      "distinct_raw_task_starts": 60,
+      "compactions": 23,
+      "explicit_failed_turns": 2,
+      "retained_rollover_files": 1,
+      "classification": "confirmed_stale_authority_error_and_governance_overreach",
+      "case_ids": [
+        "CT-04"
+      ],
+      "outcome": "A V18-only Terra preference was wrongly carried through V25 and corrected after human challenge. Oversight also challenged inappropriate inherited evaluation gates.",
+      "limits": "CT-04. Many scientific stop gates were legitimate. Remembered instruction scope was wrong; no particular compaction cause is established."
+    },
+    {
+      "alias": "C09",
+      "project": "Christomorphic-Tinker",
+      "rank": 9,
+      "title": "V20 Researcher — SWCDC",
+      "archived": false,
+      "inventory_updated_myt": "2026-08-25T11:17:36+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.6-terra",
+          "effort": "ultra",
+          "retained_context_records": 1
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "xhigh",
+          "retained_context_records": 4
+        }
+      ],
+      "indexed_turns": 0,
+      "distinct_raw_task_starts": 5,
+      "compactions": 1,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "limited_history_mixed_failure_evidence",
+      "case_ids": [],
+      "outcome": "A short rewritten history retains a V25 closure with no optimizer or forward/backward work, a failure-path validator defect and a later debate correction.",
+      "limits": "Zero indexed turns and only 224 retained lines. Earlier chronology and copied actions cannot be fully attributed. Preserved July timestamps conflict with later context and are unreliable."
+    },
+    {
+      "alias": "C10",
+      "project": "Christomorphic-Tinker",
+      "rank": 10,
+      "title": "Debate v1 to v21 timeline",
+      "archived": false,
+      "inventory_updated_myt": "2026-08-24T10:30:12+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-5.3-codex-spark",
+          "effort": "xhigh",
+          "retained_context_records": 2
+        }
+      ],
+      "indexed_turns": 1,
+      "distinct_raw_task_starts": 1,
+      "compactions": 1,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "partial_requested_analysis_with_delivery_success",
+      "case_ids": [
+        "CT-06"
+      ],
+      "outcome": "The requested message was delivered, but the v1–v21 synthesis narrowed to root v1–v17 and contradicted the read instruction about current authority.",
+      "limits": "CT-06. One short Spark Xhigh turn; truncated reads and root-only searches did not establish later-version absence. No endless loop is demonstrated."
+    },
+    {
+      "alias": "P01",
+      "project": "portfolio_management",
+      "rank": 1,
+      "title": "GPT Trading Bias Critical Review",
+      "archived": false,
+      "inventory_updated_myt": "2026-10-06T15:59:45+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6.1-sol",
+          "effort": "ultra",
+          "retained_context_records": 6
+        }
+      ],
+      "indexed_turns": 4,
+      "distinct_raw_task_starts": 4,
+      "compactions": 2,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "COMPLETED_REQUESTED_AUDIT",
+      "case_ids": [],
+      "outcome": "The requested audit, reports and public repository were delivered and published files were hash-verified.",
+      "limits": "A completed sampled task. Its broader findings are secondary evidence here; proposed controlled behavioral tests remained explicitly unrun."
+    },
+    {
+      "alias": "P02",
+      "project": "portfolio_management",
+      "rank": 2,
+      "title": "Deep Value Stack Helper",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T07:59:32+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "xhigh",
+          "retained_context_records": 53
+        }
+      ],
+      "indexed_turns": 44,
+      "distinct_raw_task_starts": 44,
+      "compactions": 9,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "DELIVERED_EARLIER_SCOPE_WITH_VERIFIED_DEFECT_AND_NEW_REPAIR_PENDING",
+      "case_ids": [
+        "PM-01",
+        "PM-03",
+        "PM-06"
+      ],
+      "outcome": "P0/P1 and operator packs reached installed acceptance after a literal PowerShell defect was repaired. A new settlement correction still awaited commissioning/functional acceptance.",
+      "limits": "PM-01, PM-03 and PM-06. Initial requirements-only scope was imposed by the Owner; newest unfinished work at cutoff is not proof of voluntary abandonment."
+    },
+    {
+      "alias": "P03",
+      "project": "portfolio_management",
+      "rank": 3,
+      "title": "AI healthcare Stack Helper",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T07:59:31+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "xhigh",
+          "retained_context_records": 80
+        }
+      ],
+      "indexed_turns": 70,
+      "distinct_raw_task_starts": 70,
+      "compactions": 10,
+      "explicit_failed_turns": 3,
+      "retained_rollover_files": 1,
+      "classification": "FINITE_REPAIR_CHAIN_WITH_PLATFORM_INTERRUPTION",
+      "case_ids": [
+        "PM-01",
+        "PM-05",
+        "PM-06"
+      ],
+      "outcome": "Candidate, annual-reporting, diagnostic and pacing corrections reached installed acceptance. The newest SDK terminal-lifecycle repair remained uncommissioned.",
+      "limits": "PM-01, PM-05 and PM-06. Revoked authentication and usage errors explain specific interruptions; old adapter authorship is unverified."
+    },
+    {
+      "alias": "P04",
+      "project": "portfolio_management",
+      "rank": 4,
+      "title": "Deep Value Manager",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T07:59:20+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 83
+        }
+      ],
+      "indexed_turns": 72,
+      "distinct_raw_task_starts": 72,
+      "compactions": 11,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "COMPLETED_PORTFOLIO_ACTIONS_AFFECTED_BY_STACK_DEFECT",
+      "case_ids": [
+        "PM-03",
+        "PM-06"
+      ],
+      "outcome": "A portfolio trim filled. A later exit remained unsettled because SDK callback identity handling could not establish terminal proof; exact portfolio state was retained in daily reviews.",
+      "limits": "PM-03 and PM-06. No convincing selected-window forgetting or endless loop. Reservation controls remained legitimate."
+    },
+    {
+      "alias": "P05",
+      "project": "portfolio_management",
+      "rank": 5,
+      "title": "Trading Stack Owner",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T07:59:14+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 43
+        }
+      ],
+      "indexed_turns": 18,
+      "distinct_raw_task_starts": 18,
+      "compactions": 25,
+      "explicit_failed_turns": 2,
+      "retained_rollover_files": 1,
+      "classification": "VERIFIED_PREMATURE_SCOPE_CLOSURE_AND_INTEGRATION_REGRESSION",
+      "case_ids": [
+        "PM-01",
+        "PM-02",
+        "PM-04",
+        "PM-05",
+        "PM-06"
+      ],
+      "outcome": "Requirements confirmation replaced implementation until human intervention; all four builds then reached acceptance. Cleanup deleted historical admission dependencies, which were restored.",
+      "limits": "PM-01, PM-02 and related integration cases. Most repairs completed; newest lifecycle work remained uncommissioned. Inherited dependency design is not attributed to the repair model."
+    },
+    {
+      "alias": "P06",
+      "project": "portfolio_management",
+      "rank": 6,
+      "title": "AI Healthcare Manager",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T07:58:50+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 108
+        }
+      ],
+      "indexed_turns": 94,
+      "distinct_raw_task_starts": 94,
+      "compactions": 14,
+      "explicit_failed_turns": 2,
+      "retained_rollover_files": 1,
+      "classification": "PORTFOLIO_WORK_COMPLETED_WITH_REPAIR_COORDINATION_AND_INCOMPLETE_TERMINAL_PATH",
+      "case_ids": [
+        "PM-01",
+        "PM-05",
+        "PM-06"
+      ],
+      "outcome": "Four portfolio exits filled. Capture defects were repaired, while a later terminal-status problem remained unresolved; helper coordination sometimes obscured portfolio outcomes.",
+      "limits": "PM-01, PM-05 and PM-06. The direct restart complaint was matched by an actual revoked token, rather than inferred cognitive stoppage."
+    },
+    {
+      "alias": "P07",
+      "project": "portfolio_management",
+      "rank": 7,
+      "title": "Bull/Bear ETF Stack Helper",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T06:50:29+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "xhigh",
+          "retained_context_records": 52
+        }
+      ],
+      "indexed_turns": 47,
+      "distinct_raw_task_starts": 47,
+      "compactions": 5,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "BOUNDED_DELIVERIES_CLOSED_WITH_MINOR_FIRST_PASS_OMISSIONS",
+      "case_ids": [],
+      "outcome": "An initial missing-field candidate was rejected, revised and accepted. P0/P1 and obsolete-interface retirement finished.",
+      "limits": "Fourteen reproduced baseline test failures limit coverage. Challenger capture was conditional/unassigned and annual labeling was explicitly deferred."
+    },
+    {
+      "alias": "P08",
+      "project": "portfolio_management",
+      "rank": 8,
+      "title": "Bull/Bear ETF Manager",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T06:50:22+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 63
+        }
+      ],
+      "indexed_turns": 56,
+      "distinct_raw_task_starts": 56,
+      "compactions": 7,
+      "explicit_failed_turns": 1,
+      "retained_rollover_files": 1,
+      "classification": "REPEATED_ECONOMIC_REVIEWS_WITH_DECLARED_CAPABILITY_LIMITS",
+      "case_ids": [],
+      "outcome": "Repeated cash/defer reviews had changing market and after-cost reasons. The missing challenger producer was identified and conditionally planned; an unneeded authorship subsystem was withdrawn.",
+      "limits": "No selected-window adopted BUY is demonstrated to have expired in repair. Repeated HOLD decisions are not automatically a loop; unassigned conditional work is not abandonment."
+    },
+    {
+      "alias": "P09",
+      "project": "portfolio_management",
+      "rank": 9,
+      "title": "Rates & Credit Manager",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T06:28:17+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "ultra",
+          "retained_context_records": 81
+        }
+      ],
+      "indexed_turns": 70,
+      "distinct_raw_task_starts": 70,
+      "compactions": 11,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "COMPLETED_DAILY_REVIEWS_AFFECTED_BY_STACK_AND_INPUT_GAPS",
+      "case_ids": [
+        "PM-02",
+        "PM-04"
+      ],
+      "outcome": "Flat-sleeve refresh and real-object preparation defects were repaired. Calendar maintenance missed the first Monday window and completed after open.",
+      "limits": "PM-02 and PM-04. Genuine input acquisition and historical learning remained open; no blanket failure or forgotten trade is established."
+    },
+    {
+      "alias": "P10",
+      "project": "portfolio_management",
+      "rank": 10,
+      "title": "Rates & Credit Stack Helper",
+      "archived": false,
+      "inventory_updated_myt": "2026-09-15T06:27:48+08:00",
+      "historical_model_effort_pairs": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "xhigh",
+          "retained_context_records": 53
+        }
+      ],
+      "indexed_turns": 46,
+      "distinct_raw_task_starts": 46,
+      "compactions": 7,
+      "explicit_failed_turns": 0,
+      "retained_rollover_files": 1,
+      "classification": "VERIFIED_INTEGRATION_DEFECTS_REPAIRED_WITH_EXPLICIT_REMAINING_INPUTS",
+      "case_ids": [
+        "PM-02",
+        "PM-04"
+      ],
+      "outcome": "Historical admission, flat refresh, native memory and real-object materializer defects were diagnosed and repaired; the materializer correction reached acceptance.",
+      "limits": "PM-02 and PM-04. Calendar renewal completed where valid, while genuine cash-interest, fee and risk-source inputs remained unresolved."
+    }
+  ]
+}

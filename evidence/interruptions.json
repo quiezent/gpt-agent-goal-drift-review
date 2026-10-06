@@ -1,0 +1,228 @@
+{
+  "scope": "Distinct explicitly failed indexed turns; tool defects and authorized human stops are separate observations.",
+  "count": 26,
+  "by_cause": {
+    "Model capacity": 10,
+    "Workspace routing timeout": 2,
+    "Usage limit": 9,
+    "Stream disconnected": 2,
+    "Request blocked; reason unspecified": 2,
+    "Authentication token revoked": 1
+  },
+  "by_model": {
+    "gpt-6.1-sol": 8,
+    "gpt-6-astra": 12,
+    "gpt-5.6-terra": 1,
+    "gpt-5.6-sol": 5
+  },
+  "records": [
+    {
+      "task": "I02",
+      "project": "ibkr_tws_workflow",
+      "title": "Trader 120B Eval",
+      "date_myt": "2026-10-05T11:10:41+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "I02",
+      "project": "ibkr_tws_workflow",
+      "title": "Trader 120B Eval",
+      "date_myt": "2026-10-05T13:03:40+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "I02",
+      "project": "ibkr_tws_workflow",
+      "title": "Trader 120B Eval",
+      "date_myt": "2026-10-05T13:04:40+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "I02",
+      "project": "ibkr_tws_workflow",
+      "title": "Trader 120B Eval",
+      "date_myt": "2026-10-05T16:56:38+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Workspace routing timeout"
+    },
+    {
+      "task": "I03",
+      "project": "ibkr_tws_workflow",
+      "title": "IBKR TWS Owner pa_tws",
+      "date_myt": "2026-09-17T00:09:39+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "I04",
+      "project": "ibkr_tws_workflow",
+      "title": "IBKR Market-Hours Instruction Executor",
+      "date_myt": "2026-09-17T00:30:24+08:00",
+      "model": "gpt-5.6-terra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "I08",
+      "project": "ibkr_tws_workflow",
+      "title": "IBKR PA GPT-5.6 Sol",
+      "date_myt": "2026-08-11T22:15:24+08:00",
+      "model": "gpt-5.6-sol",
+      "recorded_cause": "Stream disconnected"
+    },
+    {
+      "task": "I08",
+      "project": "ibkr_tws_workflow",
+      "title": "IBKR PA GPT-5.6 Sol",
+      "date_myt": "2026-08-11T22:29:30+08:00",
+      "model": "gpt-5.6-sol",
+      "recorded_cause": "Stream disconnected"
+    },
+    {
+      "task": "I08",
+      "project": "ibkr_tws_workflow",
+      "title": "IBKR PA GPT-5.6 Sol",
+      "date_myt": "2026-08-31T20:50:43+08:00",
+      "model": "gpt-5.6-sol",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "C02",
+      "project": "Christomorphic-Tinker",
+      "title": "Google Cloud Eval",
+      "date_myt": "2026-10-05T11:02:00+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Workspace routing timeout"
+    },
+    {
+      "task": "C03",
+      "project": "Christomorphic-Tinker",
+      "title": "Update tinker and cookbook",
+      "date_myt": "2026-09-30T22:25:13+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "C04",
+      "project": "Christomorphic-Tinker",
+      "title": "Christomorphic Researcher",
+      "date_myt": "2026-10-01T02:21:54+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "C06",
+      "project": "Christomorphic-Tinker",
+      "title": "Christomorphic Professor",
+      "date_myt": "2026-10-03T18:42:53+08:00",
+      "model": "gpt-6.1-sol",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "C07",
+      "project": "Christomorphic-Tinker",
+      "title": "Christomorphic Research Oversight",
+      "date_myt": "2026-09-23T21:45:16+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "C08",
+      "project": "Christomorphic-Tinker",
+      "title": "V18 Oversight",
+      "date_myt": "2026-08-15T00:00:05+08:00",
+      "model": "gpt-5.6-sol",
+      "recorded_cause": "Request blocked; reason unspecified"
+    },
+    {
+      "task": "C08",
+      "project": "Christomorphic-Tinker",
+      "title": "V18 Oversight",
+      "date_myt": "2026-08-15T00:18:44+08:00",
+      "model": "gpt-5.6-sol",
+      "recorded_cause": "Request blocked; reason unspecified"
+    },
+    {
+      "task": "P02",
+      "project": "portfolio_management",
+      "title": "Deep Value Stack Helper",
+      "date_myt": "2026-09-15T07:03:09+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "P03",
+      "project": "portfolio_management",
+      "title": "AI healthcare Stack Helper",
+      "date_myt": "2026-09-08T16:31:05+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Authentication token revoked"
+    },
+    {
+      "task": "P03",
+      "project": "portfolio_management",
+      "title": "AI healthcare Stack Helper",
+      "date_myt": "2026-09-09T21:32:03+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "P03",
+      "project": "portfolio_management",
+      "title": "AI healthcare Stack Helper",
+      "date_myt": "2026-09-15T07:03:09+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "P04",
+      "project": "portfolio_management",
+      "title": "Deep Value Manager",
+      "date_myt": "2026-09-15T07:58:05+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "P05",
+      "project": "portfolio_management",
+      "title": "Trading Stack Owner",
+      "date_myt": "2026-09-09T21:32:36+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "P05",
+      "project": "portfolio_management",
+      "title": "Trading Stack Owner",
+      "date_myt": "2026-09-15T06:07:44+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "P06",
+      "project": "portfolio_management",
+      "title": "AI Healthcare Manager",
+      "date_myt": "2026-09-14T22:04:00+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Model capacity"
+    },
+    {
+      "task": "P06",
+      "project": "portfolio_management",
+      "title": "AI Healthcare Manager",
+      "date_myt": "2026-09-15T07:48:28+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Usage limit"
+    },
+    {
+      "task": "P08",
+      "project": "portfolio_management",
+      "title": "Bull/Bear ETF Manager",
+      "date_myt": "2026-09-09T09:40:01+08:00",
+      "model": "gpt-6-astra",
+      "recorded_cause": "Model capacity"
+    }
+  ]
+}
